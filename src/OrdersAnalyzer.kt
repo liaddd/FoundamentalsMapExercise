@@ -4,6 +4,7 @@ import java.time.LocalDateTime
 data class Order(val orderId: Int, val creationDate: LocalDateTime, val orderLines: List<OrderLine>)
 data class OrderLine(val productId: Int, val name: String, val quantity: Int, val unitPrice: BigDecimal)
 
+
 class OrdersAnalyzer {
 
     fun totalDailySales(orders: List<Order>): Map<DaysOfWeek, Int> {

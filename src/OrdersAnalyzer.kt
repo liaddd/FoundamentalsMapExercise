@@ -8,11 +8,10 @@ class OrdersAnalyzer {
 
     fun totalDailySales(orders: List<Order>): Map<DaysOfWeek, Int> {
         val map = hashMapOf<DaysOfWeek, Int>()
-        var key: DaysOfWeek?
 
         for (order in orders) {
             var sum = 0
-            key = DaysOfWeek.values().find { it.day == order.creationDate.dayOfWeek.value }
+            val key: DaysOfWeek? = DaysOfWeek.values().find { it.day == order.creationDate.dayOfWeek.value }
             for (orderLine in order.orderLines) {
                 sum += orderLine.quantity
             }
